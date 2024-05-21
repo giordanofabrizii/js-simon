@@ -14,7 +14,7 @@ function getRandomInt(min,max) {
     return Math.floor(Math.random()* (max - min) + min);
 }
 
-// Generate a list of 5 random numbers all differents
+// * Generate a list of 5 random numbers all differents
 let numbersToRemeber = [];
 while (numbersToRemeber.length < 5) {
     num = getRandomInt(1,100);
@@ -22,3 +22,34 @@ while (numbersToRemeber.length < 5) {
         numbersToRemeber.push(num);
     }
 }
+
+// * Show the numbers
+const displayEl = document.getElementById("numbers");
+
+for (let i = 0; i < numbersToRemeber.length; i++) {
+    let liEl = document.createElement("li");
+    liEl.innerHTML = numbersToRemeber[i];
+    displayEl.appendChild(liEl);
+}
+
+setTimeout(function(){
+    // > Erase the content of the numbers container
+    displayEl.innerHTML = '';
+
+    // > Have to separate the functions
+    setTimeout(function(){
+        // > Ask the user to insert the numbers, one by one
+        let numberInserted = [];
+
+        for (let i = 0; i < numbersToRemeber.length; i++) {
+            let userNum = Number.parseInt(prompt("Per favore inserisci un numero di quelli che ti ricordi"));
+            if (numbersToRemeber.includes(userNum) && (numberInserted.includes(userNum) == 0)) {
+                // ? If the number is correct and not alredy inserted
+                numberInserted.push(userNum);
+            }
+        }
+
+        // > Show the correct numbers 
+
+    }, 1);
+}, 3000);
