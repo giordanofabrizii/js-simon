@@ -49,7 +49,27 @@ setTimeout(function(){
             }
         }
 
-        // > Show the correct numbers 
+        // > Show the correct numbers
+        let results = "Complimenti, hai indovinato i numeri:"
+
+        if (numberInserted.length == 0) {
+            results = "Peccato, non hai inserito nessun numero corretto, erano: ";
+            for (let i = 0; i < numbersToRemeber.length; i++) {
+                results += ' ' + numbersToRemeber[i]
+                if (i != numbersToRemeber.length - 1) {
+                    results += ','
+                }
+            }
+        }
+
+        for (let i = 0; i < numberInserted.length; i++) {
+            results += ' ' + numberInserted[i]
+            if (i != numberInserted.length - 1) {
+                results += ','
+            }
+        }
+
+        console.log(results)
 
     }, 1);
 }, 3000);
