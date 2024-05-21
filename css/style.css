@@ -30,7 +30,7 @@ li {
 @keyframes rainbow {
     0% {
         color: red;
-        transform: translateY(-10px);
+        transform: translateY(-10px) rotate(0deg);
     }
     20% {
         color: yellow;
@@ -39,7 +39,7 @@ li {
         color: green;
     }
     50% {
-        transform: translateY(+10px);
+        transform: translateY(+10px) rotate(180deg);
     }
     60% {
         color: blue;
@@ -49,6 +49,6 @@ li {
     }
     100% {
         color: red;
-        transform: translateY(-10px);
+        transform: translateY(-10px) rotate(360deg);
     }
 }
