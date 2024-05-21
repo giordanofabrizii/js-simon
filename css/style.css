@@ -29,13 +29,17 @@ li {
 
 @keyframes rainbow {
     0% {
-        color: red ;
+        color: red;
+        transform: translateY(-10px);
     }
     20% {
         color: yellow;
     }
     40% {
         color: green;
+    }
+    50% {
+        transform: translateY(+10px);
     }
     60% {
         color: blue;
@@ -45,5 +49,6 @@ li {
     }
     100% {
         color: red;
+        transform: translateY(-10px);
     }
 }
